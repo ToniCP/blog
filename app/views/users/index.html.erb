@@ -10,6 +10,7 @@
       <th>Last name</th>
       <th>Work place</th>
       <th>Mobile phone</th>
+      <th>Is active?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +23,13 @@
         <td><%= user.last_name %></td>
         <td><%= user.work_place %></td>
         <td><%= user.mobile_phone %></td>
+        <td><%= user.is_active ? "Yes" : "No" %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= button_to "Inactive", inactivate_path, method: :patch %>
+        </td>
       </tr>
     <% end %>
   </tbody>

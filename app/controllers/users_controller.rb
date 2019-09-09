@@ -51,6 +51,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def inactivate
+    user = User.first
+    user.is_active = false
+    user.save
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy

@@ -12,7 +12,7 @@ class User
   field :mobile_phone, type: String
   field :work_place, type: String
   field :age, type: Integer
-  field :is_active, type: Boolean
+  field :is_active, type: Boolean, default: true
 
   accepts_nested_attributes_for :scores
 
@@ -24,5 +24,9 @@ class User
 
   def full_name
     "#{name} #{last_name}"
+  end
+
+  def get_id
+    "#{_id}"
   end
 end
